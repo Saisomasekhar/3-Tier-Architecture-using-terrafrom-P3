@@ -10,7 +10,6 @@ resource "aws_lb_target_group" "web-target-group" {
   }
 }
 
-
 #Create App Load Balancer
 resource "aws_lb" "web-load-balancer" {
   name               = "web-load-balancer"
