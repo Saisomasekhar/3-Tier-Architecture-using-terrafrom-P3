@@ -74,5 +74,121 @@ on AWS using Terraform.
                     AWS VPC
              Multi-AZ Architecture
 ```
+# ⚙️ Prerequisites
 
+Before deploying the infrastructure, install:
+
+### AWS CLI
+
+Verify:
+
+```bash
+aws --version
+```
+
+### Terraform
+
+Verify:
+
+```bash
+terraform version
+```
+
+### Git
+
+Verify:
+
+```bash
+git --version
+```
+
+You also need an AWS account with appropriate IAM permissions.
+
+---
+
+# 🔑 Configure AWS Credentials
+
+Configure the AWS CLI:
+
+```bash
+aws configure
+```
+
+Provide:
+
+```text
+AWS Access Key ID
+AWS Secret Access Key
+Default region
+Output format
+```
+
+Verify your AWS identity:
+
+```bash
+aws sts get-caller-identity
+```
+# 🚀 Deployment
+
+## Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/Saisomasekhar/aws-3-tier-architecture-terraform.git
+```
+
+Navigate to the project:
+
+```bash
+cd aws-3-tier-architecture-terraform
+```
+
+---
+
+## Step 2: Initialize Terraform
+
+```bash
+terraform init
+```
+
+This downloads the required Terraform providers and initializes the working directory.
+
+---
+
+## Step 3: Format Terraform Code
+
+```bash
+terraform fmt -recursive
+```
+
+---
+
+## Step 4: Validate Configuration
+
+```bash
+terraform validate
+```
+
+Expected output:
+
+```text
+Success! The configuration is valid.
+```
+
+---
+
+## Step 5: Review Execution Plan
+
+```bash
+terraform plan
+```
+
+Review the resources Terraform plans to create.
+
+---
+
+## Step 6: Deploy Infrastructure
+
+```bash
+terraform apply
+```
 
