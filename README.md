@@ -41,12 +41,38 @@ on AWS using Terraform.
 
 ## Architecture Flow
 
-Internet
-    ↓
-Application Load Balancer
-    ↓
-EC2 Instances
-    ↓
-RDS
+```text
+                         Internet
+                            |
+                            |
+                            |
+                            |
+                  +---------v----------+
+                  | Application Load   |
+                  | Balancer (ALB)     |
+                  +---------+----------+
+                            |
+                            |
+              +-------------+-------------+
+              |                           |
+      +-------v-------+           +-------v-------+
+      | EC2 Instance  |           | EC2 Instance  |
+      | Private       |           | Private       |
+      | Subnet AZ-1   |           | Subnet AZ-2   |
+      +-------+-------+           +-------+-------+
+              |                           |
+              +-------------+-------------+
+                            |
+                            |
+                    +-------v--------+
+                    | Amazon RDS     |
+                    | MySQL          |
+                    | Private       |
+                    | Subnets       |
+                    +----------------+
+
+                    AWS VPC
+             Multi-AZ Architecture
+```
 
 
